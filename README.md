@@ -11,6 +11,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - JavaScript
 - TypeScript
 - ReactJS
+- RadixUI
 - Styled components
 - Context API
 
