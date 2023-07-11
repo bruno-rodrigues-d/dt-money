@@ -1,15 +1,19 @@
-import { useContext } from "react";
-import { Header } from "../../components/Header";
-import { Summary } from "../../components/Summary";
-import { TransactionContext } from "../../contexts/TransactionsContext";
-import { dateFormtter, priceFormatter } from "../../utils/formatter";
-import { SearchForm } from "./components/SearchForm";
-import { TransactionsContainer, TransactionsTable, PriceHightlight } from "./styles";
+import { useContext } from 'react'
+import { Header } from '../../components/Header'
+import { Summary } from '../../components/Summary'
+import { TransactionContext } from '../../contexts/TransactionsContext'
+import { dateFormtter, priceFormatter } from '../../utils/formatter'
+import { SearchForm } from './components/SearchForm'
+import {
+  TransactionsContainer,
+  TransactionsTable,
+  PriceHightlight,
+} from './styles'
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionContext);
+  const { transactions } = useContext(TransactionContext)
 
-  return(
+  return (
     <div>
       <Header />
       <Summary />
@@ -19,10 +23,10 @@ export function Transactions() {
 
         <TransactionsTable>
           <tbody>
-            {transactions.map(transaction => {
+            {transactions.map((transaction) => {
               return (
                 <tr key={transaction.id}>
-                  <td width='50%'>{transaction.description}</td>
+                  <td width="50%">{transaction.description}</td>
                   <td>
                     <PriceHightlight variant={transaction.type}>
                       {transaction.type === 'outcome' && '- '}
@@ -30,7 +34,9 @@ export function Transactions() {
                     </PriceHightlight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{dateFormtter.format(new Date(transaction.createdAt))}</td>
+                  <td>
+                    {dateFormtter.format(new Date(transaction.createdAt))}
+                  </td>
                 </tr>
               )
             })}
