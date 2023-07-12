@@ -31,6 +31,14 @@
       "type": "outcome",
       "createdAt": "2023-07-11T18:11:54.248Z",
       "id": 4
+    },
+    {
+      "description": "Caldo",
+      "price": 10,
+      "category": "Alimentação",
+      "type": "income",
+      "createdAt": "2023-07-12T14:43:11.769Z",
+      "id": 5
     }
   ]
 }
